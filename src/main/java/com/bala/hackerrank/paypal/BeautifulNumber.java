@@ -1,6 +1,8 @@
 package com.bala.hackerrank.paypal;
 
 import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.IntStream;
 
 public class BeautifulNumber {
 
@@ -14,31 +16,33 @@ public class BeautifulNumber {
     }
 
     static long solve(int l, int r) {
-        long beautifyNumber = 0;
-        for (int i = l; i <= r; i++) {
+        AtomicLong beautifyNumber = new AtomicLong();
+        IntStream.rangeClosed(l, r).forEach(value -> {
             HashSet<Long> subSet = new HashSet<>();
-            int i1 = squareAndAdd(i, subSet);
+            int i1 = squareAndAdd(value, subSet);
             if (i1 == 1 || i1 == 7) {
-                beautifulNum.addAll(subSet);
-                beautifyNumber += i;
+//                beautifulNum.addAll(subSet);
+                beautifyNumber.addAndGet(value);
             }
-        }
-        return beautifyNumber;
+        });
+        return beautifyNumber.get();
 
     }
 
     private static int squareAndAdd(int num, HashSet<Long> subSet) {
         subSet.add((long) num);
-        if (beautifulNum.contains(num)) {
+       /* if (beautifulNum.contains(num)) {
             return 1;
-        }
-        int sum = 0;
-        while (num > 0) {
-            int i = num % 10;
-            sum += (i * i);
-            num = num / 10;
-        }
-        System.out.println("sum is "+sum);
+        }*/
+        int sum = String.valueOf(num)
+                .chars()
+                .map(operand -> {
+                    //  System.out.println(Character.getNumericValue(operand));
+                    int numericValue = Character.getNumericValue(operand);
+                    return numericValue * numericValue;
+                })
+                .sum();
+//        System.out.println("sum is " + sum);
         while (sum > 9) {
             sum = squareAndAdd(sum, subSet);
         }

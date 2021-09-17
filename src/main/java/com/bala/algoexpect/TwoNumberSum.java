@@ -66,6 +66,7 @@ public class TwoNumberSum {
      */
     static int[] twoNumberSum(int[] num, int sum) {
         HashMap<Integer, Integer> diffMap = new HashMap<>();
+        final int[][] a = new int[1][1];
         for (int i = 0; i < num.length; i++) {
             int currentElm = num[i];
             int y = sum - currentElm;

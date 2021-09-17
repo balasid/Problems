@@ -15,8 +15,8 @@ public class JavaSubComparision {
             }
         }
 
-        /*System.out.println("****");
-        System.out.println(strings);*/
+        System.out.println("****");
+        System.out.println(strings);
         return strings.first() + "\n" + strings.last();
     }
 
