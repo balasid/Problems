@@ -1,9 +1,6 @@
 package com.bala.hackerrank;
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 public class LRUMap {
     int size;
@@ -12,8 +9,17 @@ public class LRUMap {
 
     public LRUMap(int size) {
         this.size = size;
-        map = new HashMap<>(size);
+        map = new LinkedHashMap<>(size);
         stack = new LinkedList<>();
+    }
+
+    public static void main(String[] args) {
+        LRUMap lruMap = new LRUMap(3);
+        lruMap.addToCache(1, 1);
+        lruMap.addToCache(2, 2);
+        lruMap.addToCache(3, 3);
+        lruMap.addToCache(4, 4);
+        System.out.println(lruMap.stack);
     }
 
     public void addToCache(Integer key, Integer value) {
@@ -21,11 +27,18 @@ public class LRUMap {
         if (integer != null) {
             stack.remove(integer);
         } else {
-            Integer last = stack.removeLast();
-            map.put(key, value);
+            if (stack.size() == size) {
+                Integer last = stack.removeLast();
+                map.remove(last);
+            }
         }
         stack.push(key);
+        map.put(key, value);
+        System.out.println(map);
     }
 
+    public Integer getFromCache(Integer key) {
+        return map.get(key);
+    }
 
 }

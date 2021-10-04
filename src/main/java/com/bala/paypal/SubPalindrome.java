@@ -1,12 +1,15 @@
 package com.bala.paypal;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class SubPalindrome {
     static List<String> combinations = new ArrayList<>();
 
     public static void main(String[] args) {
-        String palWord = "madam";
+        String palWord = "babageegd";
         Set<String> palindrome = computePalindrome(palWord);
         System.out.println(palindrome.size());
         System.out.println(palindrome);

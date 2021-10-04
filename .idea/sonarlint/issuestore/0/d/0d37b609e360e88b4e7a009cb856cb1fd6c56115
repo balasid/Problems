@@ -1,17 +1,17 @@
 
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(×ö«¯8ø¬„‰³/
+U	java:S106,"9Replace this use of System.out or System.err by a logger.(äá‡8°‚…‰³/
+U	java:S106-"9Replace this use of System.out or System.err by a logger.(ÂËÇ×8ë¤¨‰³/
 H
 java:S1659"&Declare "maxRange" on a separate line.(¢éÖªúÿÿÿÿ8²™»ˆ³/
-Z	java:S1061"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ8ç€‰³/
-D
-java:S1172"(Remove this unused method parameter "n".(õéß#8ò¼Š‰³/
-U	java:S106"9Replace this use of System.out or System.err by a logger.(»å¨™8ôåÇ‰³/
 ]	java:S125("<This block of commented-out lines of code should be removed.(»¥³¾øÿÿÿÿ8®Ç¹‰³/
-U	java:S106/"9Replace this use of System.out or System.err by a logger.(×ö«¯8ø¬„‰³/
-Z	java:S1060"9Replace this use of System.out or System.err by a logger.(êÓÛ¬şÿÿÿÿ8‚½ıˆ³/
-U	java:S106-"9Replace this use of System.out or System.err by a logger.(ÂËÇ×8ë¤¨‰³/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(êğ»ıÿÿÿÿ8Ãß…³/
-U	java:S106@"9Replace this use of System.out or System.err by a logger.(×Æáî8½ò·ˆ³/
-U	java:S106,"9Replace this use of System.out or System.err by a logger.(äá‡8°‚…‰³/
-U	java:S106+"9Replace this use of System.out or System.err by a logger.(ƒâüÖ8°‚…‰³/
 U	java:S106"9Replace this use of System.out or System.err by a logger.(½µÄ—8×ß†‰³/
 X	java:S125"<This block of commented-out lines of code should be removed.(®ä©Ú8¢İ´‰³/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(êğ»ıÿÿÿÿ8Ãß…³/
+D
+java:S1172"(Remove this unused method parameter "n".(õéß#8ò¼Š‰³/
+U	java:S106+"9Replace this use of System.out or System.err by a logger.(ƒâüÖ8°‚…‰³/
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(æ¨¤šøÿÿÿÿ8ç€‰³/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(»å¨™8ôåÇ‰³/
+Z	java:S1060"9Replace this use of System.out or System.err by a logger.(êÓÛ¬şÿÿÿÿ8‚½ıˆ³/
+U	java:S106@"9Replace this use of System.out or System.err by a logger.(×Æáî8½ò·ˆ³/

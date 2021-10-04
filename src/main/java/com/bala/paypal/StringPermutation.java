@@ -7,11 +7,12 @@ import java.util.Map;
 
 public class StringPermutation {
     public static void main(String[] args) {
-        String perm = "he";
+        String perm = "abcd";
         computePermutations("", perm);
     }
 
     private static void computePermutations(String subString, String remainingStr) {
+        System.out.println(subString + " " + remainingStr);
         if (remainingStr.length() == 0) {
             System.out.println(subString);
         }

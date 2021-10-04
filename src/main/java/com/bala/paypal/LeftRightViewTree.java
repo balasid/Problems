@@ -7,7 +7,7 @@ public class LeftRightViewTree {
         if (node == null) {
             return;
         }
-        while (maxLevel < level) {
+        if (maxLevel < level) {
             System.out.println(node.data);
             maxLevel = level;
         }

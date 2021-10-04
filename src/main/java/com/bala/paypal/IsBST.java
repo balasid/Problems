@@ -3,11 +3,14 @@ package com.bala.paypal;
 public class IsBST {
     public static void main(String[] args) {
         IsBST isBST = new IsBST();
-        Node root = new Node(3);
+        Node root = new Node(2);
         root.left = new Node(2);
-        root.right = new Node(5);
-        root.left.left = new Node(1);
-        root.left.right = new Node(4);
+        root.right = new Node(2);
+//        root.left.left = new Node(1);
+//        root.left.right = new Node(4);
+        /*Node root = new Node(2);
+        root.left = new Node(1);
+        root.right = new Node(3);*/
         if (isBST.isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE)) {
             System.out.println("Is BST");
         } else {

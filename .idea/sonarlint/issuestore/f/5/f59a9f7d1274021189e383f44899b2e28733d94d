@@ -1,13 +1,13 @@
 
-K
-java:S1121".Extract the assignment out of this expression.(èãÒ¤8’Úñ„³/
-U	java:S106"9Replace this use of System.out or System.err by a logger.(èãÒ¤8’Úñ„³/
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(†ñÀÌıÿÿÿÿ8òÛ×„³/
-n
-java:S20958"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ğ¢Å–şÿÿÿÿ8®µÙ„³/
 V
 java:S1118":Add a private constructor to hide the implicit public one.(òª‚d8òÛ×„³/
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(†ñÀÌıÿÿÿÿ8òÛ×„³/
 M
 java:S11726"+Remove this unused method parameter "args".(Á·Ôúøÿÿÿÿ8ğÁâ„³/
-g	java:S112J"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ8ÜÙ„³/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(èãÒ¤8’Úñ„³/
+n
+java:S20958"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ğ¢Å–şÿÿÿÿ8®µÙ„³/
 U	java:S1063"9Replace this use of System.out or System.err by a logger.(ö–ËÖ8£çø„³/
+g	java:S112J"FDefine and throw a dedicated exception instead of using a generic one.(¼ÿ¾¹ÿÿÿÿÿ8ÜÙ„³/
+K
+java:S1121".Extract the assignment out of this expression.(èãÒ¤8’Úñ„³/
