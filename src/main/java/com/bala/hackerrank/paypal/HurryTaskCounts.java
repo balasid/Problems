@@ -2,11 +2,62 @@ package com.bala.hackerrank.paypal;
 
 import java.util.*;
 
+/**
+ * Sample Input
+ * 3 16
+ * 2 8
+ * 4 5
+ * 5 1
+ * <p>
+ * sample output
+ * 2
+ * <p>
+ * Sample Input
+ * 5 50
+ * 1 5
+ * 3 2
+ * 7 30
+ * 10 5
+ * 12 4
+ * <p>
+ * output
+ * 4
+ */
 public class HurryTaskCounts {
+    /*public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter wr = new PrintWriter(System.out);
+        String[] line = br.readLine().split(" ");
+        int n = Integer.parseInt(line[0]);
+        int t = Integer.parseInt(line[1]);
+        int[][] task = new int[n][2];
+        for(int i_task = 0; i_task < n; i_task++)
+        {
+            String[] arr_task = br.readLine().split(" ");
+            for(int j_task = 0; j_task < arr_task.length; j_task++)
+            {
+                task[i_task][j_task] = Integer.parseInt(arr_task[j_task]);
+            }
+        }
+
+        int out_ = solve(n, t, task);
+        System.out.println(out_);
+
+        wr.close();
+        br.close();
+    }
+    static int solve(int n, int t, int[][] task){
+        // Write your code here
+
+
+    }*/
     public static void main(String[] args) {
-        int n = 3;
-        int taskTime = 25;
-        int[][] task = {{2, 8}, {4, 5}, {5, 1}, {3, 5}};
+        /*int n = 3;
+        int taskTime = 16;
+        int[][] task = {{2, 8}, {4, 5}, {5, 1}};*/
+        int n = 5;
+        int taskTime = 50;
+        int[][] task = {{1, 5}, {3, 2}, {7, 30}, {10, 5}, {12, 4}};
         System.out.println(solve(n, taskTime, task));
     }
 
@@ -61,25 +112,25 @@ public class HurryTaskCounts {
             for (int j = i; j < n; j++) {
                 int currentDistance = task[j][0];
                 int currentTaskTime = task[j][1];
-                if(i==0){
-                    remainingTime -=2*currentDistance;
+                if (i == 0) {
+                    remainingTime -= 2 * currentDistance;
                 } else {
-                    remainingTime -=currentDistance;
+                    remainingTime -= currentDistance;
                 }
-                if(remainingTime < 0){
+                if (remainingTime < 0) {
                     break;
                 }
-                if(remainingTime >= currentTaskTime){
-                    remainingTime -=currentTaskTime;
+                if (remainingTime >= currentTaskTime) {
+                    remainingTime -= currentTaskTime;
                     integers1.add(currentDistance);
 //                    System.out.println("Completed Distance "+ currentDistance+" completed time "+currentTaskTime);
-                    taskCompletedPerVisit ++;
+                    taskCompletedPerVisit++;
                 }
             }
             System.out.println(integers1);
             integers.add(taskCompletedPerVisit);
         }
-        int max =0;
+        int max = 0;
         for (Integer integer : integers) {
             if (max < integer) {
                 max = integer;

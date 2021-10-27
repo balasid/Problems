@@ -7,7 +7,6 @@ public class MaximumDepthOfTree {
         treeNode.right = new TreeNode(20);
         treeNode.right.left = new TreeNode(15);
         treeNode.right.right = new TreeNode(7);
-//        treeNode = null;
         System.out.println(new MaximumDepthOfTree().maxDepth(treeNode));
     }
 

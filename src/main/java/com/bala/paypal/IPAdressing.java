@@ -5,20 +5,23 @@ import java.util.List;
 
 public class IPAdressing {
     public static void main(String[] args) {
-        String ip = "25525511135";
+//        String ip = "25525511135";
+        String ip = "225511135";
         int n = ip.length();
         List<String> possibleIPs = new ArrayList<>();
         for (int i = 1; i < n && i < 4; i++) {
             String firstPart = ip.substring(0, i);
+            System.out.println(firstPart);
             if (!isValid(firstPart)) {
                 continue;
             }
+            System.out.println("After loop : " + firstPart);
             for (int j = 1; i + j < n && j < 4; j++) {
                 String secondPart = ip.substring(i, i + j);
                 if (!isValid(secondPart)) {
                     continue;
                 }
-                for (int k = 1; i + j + k < n && k < 4; k++) {
+                for (int k = 2; i + j + k < n && k < 4; k++) {
                     String thirdPart = ip.substring(i + j, i + j + k);
                     String fourthPart = ip.substring(i + j + k);
                     if (!isValid(thirdPart) || !isValid(fourthPart)) {

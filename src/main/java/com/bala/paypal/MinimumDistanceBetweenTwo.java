@@ -9,8 +9,8 @@ public class MinimumDistanceBetweenTwo {
             if (a[i] == x || a[i] == y) {
                 if (p != -1 && a[i] != a[p]) {
                     int distance = i - p;
-                    System.out.println("index of p & i " + p + " " + i);
-                    minDistance = Math.min(minDistance, i - p);
+//                    System.out.println("index of p & i " + p + " " + i);
+                    minDistance = Math.min(minDistance, distance);
                 }
                 p = i;
             }

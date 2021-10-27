@@ -1,12 +1,13 @@
 package com.bala.hackerrank.paypal;
 
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.IntStream;
 
 public class BeautifulNumber {
 
-    private static HashSet<Long> beautifulNum = new HashSet<>();
+    static Map<Integer, Integer> beautifulNum = new HashMap<>();
 
     public static void main(String[] args) {
         int l = 257, r = 1113; //output = 79702
@@ -15,36 +16,48 @@ public class BeautifulNumber {
         System.out.println("Beautiful Number between " + l + " & " + r + " is " + out_);
     }
 
+    private static int squareAndAdd(int num) {
+        int sum = 0;
+        Integer integer = beautifulNum.get(num);
+        if (integer != null) {
+            return integer;
+        }
+        while (num > 0) {
+            int i = num % 10;
+            sum += (i * i);
+            num = num / 10;
+        }
+        while (sum > 9) {
+            sum = squareAndAdd(sum);
+        }
+        return sum;
+    }
+
     static long solve(int l, int r) {
         AtomicLong beautifyNumber = new AtomicLong();
-        IntStream.rangeClosed(l, r).forEach(value -> {
-            HashSet<Long> subSet = new HashSet<>();
-            int i1 = squareAndAdd(value, subSet);
+        IntStream.rangeClosed(l, r).parallel().forEach(value -> {
+//            System.out.println("Start " + System.currentTimeMillis());
+            int i1 = squareAndAdd(value);
+//            System.out.println("End " + System.currentTimeMillis());
             if (i1 == 1 || i1 == 7) {
-//                beautifulNum.addAll(subSet);
                 beautifyNumber.addAndGet(value);
             }
+            beautifulNum.put(value, i1);
         });
         return beautifyNumber.get();
 
     }
 
-    private static int squareAndAdd(int num, HashSet<Long> subSet) {
-        subSet.add((long) num);
-       /* if (beautifulNum.contains(num)) {
-            return 1;
-        }*/
+    private static int squareAndAdd1(int num) {
         int sum = String.valueOf(num)
                 .chars()
                 .map(operand -> {
-                    //  System.out.println(Character.getNumericValue(operand));
                     int numericValue = Character.getNumericValue(operand);
                     return numericValue * numericValue;
                 })
                 .sum();
-//        System.out.println("sum is " + sum);
         while (sum > 9) {
-            sum = squareAndAdd(sum, subSet);
+            sum = squareAndAdd(sum);
         }
         return sum;
     }
