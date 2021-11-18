@@ -36,7 +36,7 @@ import java.util.HashMap;
  */
 public class LongestSubStringWithOutRepeatingChar {
     public static void main(String[] args) {
-        int length = new LongestSubStringWithOutRepeatingChar().lengthOfLongestSubstring("abcabcd");
+        int length = new LongestSubStringWithOutRepeatingChar().lengthOfLongestSubstring("abcdeabcd");
         System.out.println(length);
     }
 
